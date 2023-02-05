@@ -812,8 +812,8 @@ video {
   line-height: 2.25rem;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
@@ -828,6 +828,11 @@ video {
 
 .text-onNeutralBg {
   color: var(--onNeutralBg);
+}
+
+.text-zinc-500 {
+  --tw-text-opacity: 1;
+  color: rgb(113 113 122 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -883,6 +888,15 @@ video {
   --primaryBg: var(--color-primary-100);
   --onPrimaryBg: var(--color-primary-900);
   --primary: var(--color-primary-500);
+  --h1Text: var(--color-primary-300);
+}
+
+.theme-dark {
+  --neutralBg: var(--color-neutral-900);
+  --onNeutralBg: #fff;
+  --primaryBg: var(--color-primary-900);
+  --onPrimaryBg: var(--color-primary-50);
+  --primary: var(--color-primary-400);
   --h1Text: var(--color-primary-300);
 }
 
