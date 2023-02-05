@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <>
             <header>
-                <p className="text-center font-bold text-3xl">Hi, my name is <span className="text-5xl text-zinc-500">Saar Paz.</span>
+                <p className="text-center font-bold text-3xl">Hi, my name is <span className="text-5xl text-h1TXT">Saar Paz.</span>
             </p>
             </header>
             <section className="flex justify-evenly text-justify align-middle max-h-min mx-20 mt-5 border-8 border-onPrimaryBg p-10 gap-10 max-xl:flex-col max-xl:items-center">

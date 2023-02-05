@@ -835,6 +835,10 @@ video {
   color: rgb(113 113 122 / var(--tw-text-opacity));
 }
 
+.text-h1TXT {
+  color: var(--h1Text);
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -888,7 +892,7 @@ video {
   --primaryBg: var(--color-primary-100);
   --onPrimaryBg: var(--color-primary-900);
   --primary: var(--color-primary-500);
-  --h1Text: var(--color-primary-300);
+  --h1Text: var(--color-primary-900);
 }
 
 .theme-dark {
@@ -897,7 +901,7 @@ video {
   --primaryBg: var(--color-primary-900);
   --onPrimaryBg: var(--color-primary-50);
   --primary: var(--color-primary-400);
-  --h1Text: var(--color-primary-300);
+  --h1Text: var(--color-primary-200);
 }
 
 .hover\:bg-blue-500:hover {
