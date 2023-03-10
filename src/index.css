@@ -53,7 +53,7 @@
 }
 
 .theme-light {
-  --neutralBg: theme("colors.white");
+  --neutralBg: theme("colors.white/30%");
   --onNeutralBg: var(--color-neutral-900);
   --primaryBg: var(--color-primary-100);
   --onPrimaryBg: var(--color-primary-900);
@@ -77,3 +77,4 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+

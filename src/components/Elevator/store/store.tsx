@@ -2,14 +2,35 @@ import React from "react";
 import { makeAutoObservable } from "mobx";
 
 class ElevatorStore {
-  floorNumber = 0;
+  floorsStack: number[] = [];
+  numberOfFloors = 6;
+  elevatorLastFloor = 0;
+  elevatorMoves = false;
 
   constructor() {
     makeAutoObservable(this);
+
+    this.pushFloor = this.pushFloor.bind(this);
+    this.shiftFloor = this.shiftFloor.bind(this);
+    this.setElevatorLastFloor = this.setElevatorLastFloor.bind(this);
   }
 
-  chooseFloor(newFloor: number) {
-    this.floorNumber = newFloor;
+  pushFloor(newFloor: number) {
+    this.floorsStack.push(newFloor);
+  }
+
+  shiftFloor() {
+    this.floorsStack.shift();
+  }
+
+  setElevatorLastFloor(floorNumber: number) {
+    this.elevatorLastFloor = floorNumber;
+  }
+  // updateLastVisitedFloor(floorNumber: number) {
+  //   this.lastVisitedFloor = floorNumber;
+  // }
+  setNumberOfFloors(numberOfFloors: number) {
+    this.numberOfFloors = numberOfFloors;
   }
 }
 
