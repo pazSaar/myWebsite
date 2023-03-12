@@ -3,40 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="09dcbd13-861a-4634-84de-76d9cb65cf25" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/core/node_modules/.bin/json5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/core/node_modules/.bin/parser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/core/node_modules/.bin/semver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/generator/node_modules/.bin/jsesc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/helper-compilation-targets/node_modules/.bin/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/helper-compilation-targets/node_modules/.bin/semver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/template/node_modules/.bin/parser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/traverse/node_modules/.bin/parser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@vitejs/plugin-react/node_modules/.bin/vite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/acorn-node/node_modules/.bin/acorn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/browserslist/node_modules/.bin/browserslist-lint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/esbuild/bin/esbuild" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/esbuild/bin/esbuild" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/postcss-import/node_modules/.bin/resolve" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/postcss-selector-parser/node_modules/.bin/cssesc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/postcss/node_modules/.bin/nanoid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/node_modules/.bin/loose-envify" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react/node_modules/.bin/loose-envify" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/node_modules/.bin/loose-envify" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/update-browserslist-db/node_modules/.bin/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vite/node_modules/.bin/esbuild" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vite/node_modules/.bin/resolve" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vite/node_modules/.bin/rollup" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Elevator/Building.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/Building.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Elevator/Elevator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/Elevator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Elevator/ElevatorButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/ElevatorButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Elevator/ElevatorPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/ElevatorPanel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Elevator/store/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/store/store.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/developer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/developer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +100,7 @@
       <workItem from="1675583560887" duration="388000" />
       <workItem from="1675583958171" duration="2183000" />
       <workItem from="1675586214063" duration="13848000" />
-      <workItem from="1677673043028" duration="78675000" />
+      <workItem from="1677673043028" duration="104308000" />
     </task>
     <servers />
   </component>

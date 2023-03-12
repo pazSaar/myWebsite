@@ -26,9 +26,7 @@ class ElevatorStore {
   setElevatorLastFloor(floorNumber: number) {
     this.elevatorLastFloor = floorNumber;
   }
-  // updateLastVisitedFloor(floorNumber: number) {
-  //   this.lastVisitedFloor = floorNumber;
-  // }
+
   setNumberOfFloors(numberOfFloors: number) {
     this.numberOfFloors = numberOfFloors;
   }
