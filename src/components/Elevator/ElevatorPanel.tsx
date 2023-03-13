@@ -11,7 +11,8 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
     floorsStack,
     pushFloor,
     elevatorLastFloor,
-    elevatorMoves,
+    elevatorMoving,
+    elevatorDoorsMoving,
   } = useContext(FloorContext);
 
   const [currentFloor, setCurrentFloor] = useState(elevatorLastFloor);
@@ -31,11 +32,11 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
       (500 / Math.abs(floorsStack[0] - elevatorLastFloor)) * 2;
 
     let id: number | undefined = undefined;
-    if (floorsStack.length > 0) {
+    if (floorsStack.length > 0 && !elevatorDoorsMoving) {
       id = setInterval(changeFloorDuringLiftMovement, floorChangeDuration);
     }
     if (id) return () => clearInterval(id);
-  }, [floorsStack[0]]);
+  }, [floorsStack[0], elevatorDoorsMoving]);
 
   const createPanelButtons = () => {
     const handleButtonMouseDown = (
@@ -44,8 +45,8 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
     ) => {
       setButtonLight(true);
       if (
-        (elevatorMoves && !floorsStack.includes(floorNumber)) ||
-        (!elevatorMoves && floorNumber !== elevatorLastFloor)
+        (elevatorMoving && !floorsStack.includes(floorNumber)) ||
+        (!elevatorMoving && floorNumber !== elevatorLastFloor)
       ) {
         pushFloor(floorNumber);
       }
@@ -55,7 +56,7 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
       setButtonLight: (lightOn: boolean) => void,
       floorNumber: number
     ) => {
-      if (floorNumber === elevatorLastFloor && !elevatorMoves)
+      if (floorNumber === elevatorLastFloor && !elevatorMoving)
         setButtonLight(false);
     };
 
@@ -85,7 +86,7 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
           </span>
           <span className="absolute bottom-0 left-0 right-0 text-green-500 text-xs m-0">
             <span className="text-green-500 text-[10px] m-0">
-              {floorsStack.join(",")}
+              {floorsStack.join("→")}
             </span>
           </span>
         </div>

@@ -7,7 +7,6 @@ type BuildingProps = {};
 
 const Building: FC<BuildingProps> = observer(() => {
   const [elevatorNextFloor, setElevatorNextFloor] = useState(0);
-  const [elevatorDoorsToggle, setElevatorDoorsToggle] = useState(true);
 
   let {
     floorsStack,
@@ -15,23 +14,24 @@ const Building: FC<BuildingProps> = observer(() => {
     shiftFloor,
     setElevatorLastFloor,
     setElevatorMoves,
+    elevatorDoorsMoving,
   } = useContext(FloorContext);
 
   const buildingColorTailwindSyntax = "bg-indigo-200";
 
   useEffect(() => {
-    if (floorsStack[0] !== undefined) {
-      setElevatorDoorsToggle(false);
+    if (floorsStack[0] !== undefined && !elevatorDoorsMoving) {
       setElevatorMoves(true);
       setElevatorNextFloor(floorsStack[0]);
     }
-  }, [JSON.stringify(floorsStack)]);
+  }, [JSON.stringify(floorsStack), elevatorDoorsMoving]);
 
   const handleElevatorMovementTransitionEnd = () => {
-    setElevatorDoorsToggle(true);
-    setElevatorLastFloor(floorsStack[0]);
-    setElevatorMoves(false);
-    shiftFloor();
+    if (!elevatorDoorsMoving) {
+      setElevatorLastFloor(floorsStack[0]);
+      setElevatorMoves(false);
+      shiftFloor();
+    }
   };
 
   const drawRoof = () => {

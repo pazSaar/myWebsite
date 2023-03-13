@@ -5,7 +5,8 @@ class ElevatorStore {
   floorsStack: number[] = [];
   numberOfFloors = 6;
   elevatorLastFloor = 0;
-  elevatorMoves = false;
+  elevatorMoving = false;
+  elevatorDoorsMoving = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -14,6 +15,7 @@ class ElevatorStore {
     this.shiftFloor = this.shiftFloor.bind(this);
     this.setElevatorLastFloor = this.setElevatorLastFloor.bind(this);
     this.setElevatorMoves = this.setElevatorMoves.bind(this);
+    this.setElevatorDoorsMoving = this.setElevatorDoorsMoving.bind(this);
   }
 
   pushFloor(newFloor: number) {
@@ -29,7 +31,11 @@ class ElevatorStore {
   }
 
   setElevatorMoves(elevatorMoves: boolean) {
-    this.elevatorMoves = elevatorMoves;
+    this.elevatorMoving = elevatorMoves;
+  }
+
+  setElevatorDoorsMoving(doorsMoving: boolean) {
+    this.elevatorDoorsMoving = doorsMoving;
   }
 }
 

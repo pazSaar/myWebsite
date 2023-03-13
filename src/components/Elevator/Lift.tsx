@@ -1,4 +1,5 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useContext, useEffect, useRef, useState } from "react";
+import FloorContext from "./store/FloorContext";
 
 type LiftProps = {
   liftNextFloor: number;
@@ -7,18 +8,33 @@ type LiftProps = {
 const Lift: FC<LiftProps> = ({ liftNextFloor = 0 }) => {
   const [liftDoorsToggle, setLiftDoorsToggle] = useState(false);
 
-  useEffect(() => {
-    setLiftDoorsToggle(false);
-  }, [liftNextFloor]);
+  const doorAreOpening = useRef(true);
 
-  const handleLiftDoorsMovementTransitionEnd = () => {
-    setLiftDoorsToggle(true);
+  let { setElevatorDoorsMoving, elevatorDoorsMoving } =
+    useContext(FloorContext);
+
+  const handleLiftMovementTransitionEnd = (e: React.TransitionEvent) => {
+    if (e.propertyName === "bottom") {
+      setElevatorDoorsMoving(true);
+      setLiftDoorsToggle(true);
+    }
+  };
+
+  const handleLiftDoorsMovementTransitionEnd = (e: React.TransitionEvent) => {
+    if (e.propertyName === "right" && elevatorDoorsMoving) {
+      if (doorAreOpening.current) {
+        doorAreOpening.current = false;
+        setLiftDoorsToggle(false);
+      } else {
+        doorAreOpening.current = true;
+        setElevatorDoorsMoving(false);
+      }
+    }
   };
 
   const drewLiftDoors = () => {
     const doorsSharedStyle =
       "relative w-4 h-8 bg-gray-500 place-self-start border-2 border-black transition-all duration-500 ease-in-out";
-    // "relative w-4 h-8 bg-gray-500 place-self-start border-2 border-black";
 
     return (
       <>
@@ -26,10 +42,11 @@ const Lift: FC<LiftProps> = ({ liftNextFloor = 0 }) => {
           className={`${doorsSharedStyle} border-r-1 border-r-yellow-400 rounded-l-md shadow-l-md ${
             liftDoorsToggle ? "right-2" : "right-0"
           }`}
+          onTransitionEnd={handleLiftDoorsMovementTransitionEnd}
         />
         <div
           className={`${doorsSharedStyle} border-l-2 border-l-yellow-400 rounded-r-md shadow-r-md ${
-            liftDoorsToggle ? "left-2" : "right-0"
+            liftDoorsToggle ? "left-2" : "left-0"
           }`}
         />
       </>
@@ -45,7 +62,7 @@ const Lift: FC<LiftProps> = ({ liftNextFloor = 0 }) => {
   return (
     <div
       className={liftStyle}
-      // onTransitionEnd={handleLiftDoorsMovementTransitionEnd}
+      onTransitionEnd={handleLiftMovementTransitionEnd}
     >
       {drewLiftDoors()}
     </div>
