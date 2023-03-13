@@ -13,6 +13,7 @@ class ElevatorStore {
     this.pushFloor = this.pushFloor.bind(this);
     this.shiftFloor = this.shiftFloor.bind(this);
     this.setElevatorLastFloor = this.setElevatorLastFloor.bind(this);
+    this.setElevatorMoves = this.setElevatorMoves.bind(this);
   }
 
   pushFloor(newFloor: number) {
@@ -27,8 +28,8 @@ class ElevatorStore {
     this.elevatorLastFloor = floorNumber;
   }
 
-  setNumberOfFloors(numberOfFloors: number) {
-    this.numberOfFloors = numberOfFloors;
+  setElevatorMoves(elevatorMoves: boolean) {
+    this.elevatorMoves = elevatorMoves;
   }
 }
 

@@ -9,26 +9,28 @@ const Building: FC<BuildingProps> = observer(() => {
   const [elevatorNextFloor, setElevatorNextFloor] = useState(0);
   const [elevatorDoorsToggle, setElevatorDoorsToggle] = useState(true);
 
-  let { floorsStack, numberOfFloors, shiftFloor, setElevatorLastFloor } =
-    useContext(FloorContext);
+  let {
+    floorsStack,
+    numberOfFloors,
+    shiftFloor,
+    setElevatorLastFloor,
+    setElevatorMoves,
+  } = useContext(FloorContext);
 
   const buildingColorTailwindSyntax = "bg-indigo-200";
 
   useEffect(() => {
     if (floorsStack[0] !== undefined) {
       setElevatorDoorsToggle(false);
-      setElevatorLastFloor(floorsStack[0]);
+      setElevatorMoves(true);
       setElevatorNextFloor(floorsStack[0]);
     }
   }, [JSON.stringify(floorsStack)]);
 
-  const handleElevatorDoorsMovementTransitionEnd = (e: any) => {
-    // shiftFloor();
-    console.log(e);
-  };
-
   const handleElevatorMovementTransitionEnd = () => {
     setElevatorDoorsToggle(true);
+    setElevatorLastFloor(floorsStack[0]);
+    setElevatorMoves(false);
     shiftFloor();
   };
 

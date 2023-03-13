@@ -1,13 +1,11 @@
 import React, { FC, useContext, useEffect, useState } from "react";
-import { use } from "i18next";
-import FloorContext from "./store/FloorContext";
-import { observer } from "mobx-react-lite";
 
 type LiftButtonProps = {
   floorNumber: number;
   floorsStack: number[];
   pushFloor: (floorNumber: number) => void;
   elevatorLastFloor: number;
+  elevatorMoves: boolean;
 };
 
 const ElevatorButton: FC<LiftButtonProps> = ({
@@ -15,28 +13,29 @@ const ElevatorButton: FC<LiftButtonProps> = ({
   pushFloor,
   floorNumber,
   elevatorLastFloor,
+  elevatorMoves,
 }) => {
   const [buttonClicked, setButtonClicked] = useState(false);
 
-  let buttonChose = false;
+  useEffect(() => {
+    if (!floorsStack.includes(floorNumber)) {
+      setButtonClicked(false);
+    }
+  }, [floorsStack[0]]);
 
-  // if (floorsStack.includes(floorNumber)) {
-  //   setButtonClicked(true);
-  // }
-  // console.log("ElevatorButton elevatorLastFloor", elevatorLastFloor);
-  const handleButtonMouseDown = () => {
-    // console.log("handleButtonMouseDown", elevatorLastFloor);
-
+  const handleMouseDown = () => {
     setButtonClicked(true);
     if (
-      !floorsStack.includes(floorNumber) &&
-      floorNumber !== elevatorLastFloor
+      (elevatorMoves && !floorsStack.includes(floorNumber)) ||
+      (!elevatorMoves && floorNumber !== elevatorLastFloor)
     ) {
       pushFloor(floorNumber);
-      setTimeout(() => setButtonClicked(false), 1000);
-    } else {
-      setTimeout(() => setButtonClicked(false), 50);
     }
+  };
+
+  const handleMouseUp = () => {
+    if (floorNumber === elevatorLastFloor && !elevatorMoves)
+      setButtonClicked(false);
   };
 
   return (
@@ -49,7 +48,8 @@ const ElevatorButton: FC<LiftButtonProps> = ({
         className={
           "w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-3xl select-none"
         }
-        onMouseDown={handleButtonMouseDown}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
       >
         {floorNumber}
       </div>

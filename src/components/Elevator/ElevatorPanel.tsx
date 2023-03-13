@@ -6,21 +6,33 @@ import { observer } from "mobx-react-lite";
 type ElevatorPanelProps = {};
 
 const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
-  const { numberOfFloors, floorsStack, pushFloor, elevatorLastFloor } =
-    useContext(FloorContext);
+  const {
+    numberOfFloors,
+    floorsStack,
+    pushFloor,
+    elevatorLastFloor,
+    elevatorMoves,
+  } = useContext(FloorContext);
 
   const [currentFloor, setCurrentFloor] = useState(elevatorLastFloor);
 
   useEffect(() => {
+    const changeFloorDuringLiftMovement = () => {
+      const isLiftGoingDown = elevatorLastFloor > floorsStack[0];
+
+      if (isLiftGoingDown) {
+        setCurrentFloor((currentFloor) => currentFloor - 1);
+      } else {
+        setCurrentFloor((currentFloor) => currentFloor + 1);
+      }
+    };
+
+    const floorChangeDuration =
+      (500 / Math.abs(floorsStack[0] - elevatorLastFloor)) * 2;
+
     let id: number | undefined = undefined;
     if (floorsStack.length > 0) {
-      id = setInterval(() => {
-        if (elevatorLastFloor > floorsStack[0]) {
-          setCurrentFloor((currentFloor) => currentFloor - 1);
-        } else {
-          setCurrentFloor((currentFloor) => currentFloor + 1);
-        }
-      }, (500 / Math.abs(floorsStack[0] - elevatorLastFloor)) * 2);
+      id = setInterval(changeFloorDuringLiftMovement, floorChangeDuration);
     }
     if (id) return () => clearInterval(id);
   }, [floorsStack[0]]);
@@ -35,6 +47,7 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
         floorsStack={floorsStack}
         pushFloor={pushFloor}
         elevatorLastFloor={elevatorLastFloor}
+        elevatorMoves={elevatorMoves}
       />
     );
   }
