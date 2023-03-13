@@ -3,17 +3,21 @@ import React, { FC, useContext, useEffect, useState } from "react";
 type LiftButtonProps = {
   floorNumber: number;
   floorsStack: number[];
-  pushFloor: (floorNumber: number) => void;
-  elevatorLastFloor: number;
-  elevatorMoves: boolean;
+  onMouseDown: (
+    setButtonLight: (lightOn: boolean) => void,
+    floorNumber: number
+  ) => void;
+  onMouseUp: (
+    setButtonLight: (lightOn: boolean) => void,
+    floorNumber: number
+  ) => void;
 };
 
 const ElevatorButton: FC<LiftButtonProps> = ({
   floorsStack,
-  pushFloor,
   floorNumber,
-  elevatorLastFloor,
-  elevatorMoves,
+  onMouseDown,
+  onMouseUp,
 }) => {
   const [buttonClicked, setButtonClicked] = useState(false);
 
@@ -22,21 +26,6 @@ const ElevatorButton: FC<LiftButtonProps> = ({
       setButtonClicked(false);
     }
   }, [floorsStack[0]]);
-
-  const handleMouseDown = () => {
-    setButtonClicked(true);
-    if (
-      (elevatorMoves && !floorsStack.includes(floorNumber)) ||
-      (!elevatorMoves && floorNumber !== elevatorLastFloor)
-    ) {
-      pushFloor(floorNumber);
-    }
-  };
-
-  const handleMouseUp = () => {
-    if (floorNumber === elevatorLastFloor && !elevatorMoves)
-      setButtonClicked(false);
-  };
 
   return (
     <div
@@ -48,8 +37,8 @@ const ElevatorButton: FC<LiftButtonProps> = ({
         className={
           "w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-3xl select-none"
         }
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
+        onMouseDown={() => onMouseDown(setButtonClicked, floorNumber)}
+        onMouseUp={() => onMouseUp(setButtonClicked, floorNumber)}
       >
         {floorNumber}
       </div>

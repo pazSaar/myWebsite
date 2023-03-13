@@ -37,26 +37,57 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
     if (id) return () => clearInterval(id);
   }, [floorsStack[0]]);
 
-  const buttonsArray = [];
+  const createPanelButtons = () => {
+    const handleButtonMouseDown = (
+      setButtonLight: (lightOn: boolean) => void,
+      floorNumber: number
+    ) => {
+      setButtonLight(true);
+      if (
+        (elevatorMoves && !floorsStack.includes(floorNumber)) ||
+        (!elevatorMoves && floorNumber !== elevatorLastFloor)
+      ) {
+        pushFloor(floorNumber);
+      }
+    };
 
-  for (let i = numberOfFloors - 1; i >= 0; i--) {
-    buttonsArray.push(
-      <ElevatorButton
-        key={i}
-        floorNumber={i}
-        floorsStack={floorsStack}
-        pushFloor={pushFloor}
-        elevatorLastFloor={elevatorLastFloor}
-        elevatorMoves={elevatorMoves}
-      />
-    );
-  }
+    const handleButtonMouseUp = (
+      setButtonLight: (lightOn: boolean) => void,
+      floorNumber: number
+    ) => {
+      if (floorNumber === elevatorLastFloor && !elevatorMoves)
+        setButtonLight(false);
+    };
+
+    const buttonsArray = [];
+
+    for (let i = numberOfFloors - 1; i >= 0; i--) {
+      buttonsArray.push(
+        <ElevatorButton
+          key={i}
+          floorNumber={i}
+          floorsStack={floorsStack}
+          onMouseDown={handleButtonMouseDown}
+          onMouseUp={handleButtonMouseUp}
+        />
+      );
+    }
+
+    return buttonsArray;
+  };
 
   const drawPanel = () => {
     return (
-      <div className=" self-center bg-gray-500 w-20 h-9 border border-gray-600">
-        <div className="bg-black/60 w-15 h-8 border border-gray-600 text-center">
-          <span className="text-green-500">{currentFloor}</span>
+      <div className=" self-center bg-gray-500 w-20 h-11 border border-gray-600">
+        <div className="relative bg-black/60 w-15 h-10 border border-gray-600 text-center">
+          <span className="absolute top-0 left-0 right-0 text-green-500 ">
+            {currentFloor}
+          </span>
+          <span className="absolute bottom-0 left-0 right-0 text-green-500 text-xs m-0">
+            <span className="text-green-500 text-[10px] m-0">
+              {floorsStack.join(",")}
+            </span>
+          </span>
         </div>
       </div>
     );
@@ -65,7 +96,7 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
   return (
     <div className="flex flex-col bg-neutralBg">
       {drawPanel()}
-      <div className="grid rev grid-cols-2 ">{buttonsArray}</div>
+      <div className="grid rev grid-cols-2 ">{createPanelButtons()}</div>
     </div>
   );
 });
