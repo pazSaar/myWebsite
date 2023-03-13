@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="09dcbd13-861a-4634-84de-76d9cb65cf25" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/output.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/output.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elevator/Building.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/Building.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elevator/ElevatorPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/ElevatorPanel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elevator/Lift.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/Lift.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elevator/store/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/store/store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,14 +34,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.15.1",
     "javascript.nodejs.core.library.typings.version": "16.18.12",
     "last_opened_file_path": "/Users/saarpaz/Documents/GitHub/myWebsite",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/saarpaz/Documents/GitHub/myWebsite/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "/Users/saarpaz/Documents/GitHub/myWebsite/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -49,26 +55,18 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Elevator/store" />
+      <recent name="$PROJECT_DIR$/src/components/Elevator" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build:css:watch">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="build:css:watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build:css:watch" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -86,7 +84,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build:css:watch" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.preview" />
       </list>
@@ -103,7 +100,8 @@
       <workItem from="1675581926400" duration="1348000" />
       <workItem from="1675583560887" duration="388000" />
       <workItem from="1675583958171" duration="2183000" />
-      <workItem from="1675586214063" duration="1598000" />
+      <workItem from="1675586214063" duration="13848000" />
+      <workItem from="1677673043028" duration="124272000" />
     </task>
     <servers />
   </component>
