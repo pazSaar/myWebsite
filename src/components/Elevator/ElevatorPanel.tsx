@@ -44,9 +44,17 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
       floorNumber: number
     ) => {
       setButtonLight(true);
+
+      const notPressingAlreadyPressedButton =
+        !floorsStack.includes(floorNumber);
+
+      const notPressingCurrentFloorButton = floorNumber !== elevatorLastFloor;
+
       if (
-        (elevatorMoving && !floorsStack.includes(floorNumber)) ||
-        (!elevatorMoving && floorNumber !== elevatorLastFloor)
+        (elevatorMoving && notPressingAlreadyPressedButton) ||
+        (!elevatorMoving &&
+          notPressingCurrentFloorButton &&
+          notPressingAlreadyPressedButton)
       ) {
         pushFloor(floorNumber);
       }

@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="09dcbd13-861a-4634-84de-76d9cb65cf25" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Elevator/Building.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/Building.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Elevator/Elevator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/Elevator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Elevator/ElevatorPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/ElevatorPanel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Elevator/Lift.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/Lift.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Elevator/store/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Elevator/store/store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/developer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/developer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +101,7 @@
       <workItem from="1675583560887" duration="388000" />
       <workItem from="1675583958171" duration="2183000" />
       <workItem from="1675586214063" duration="13848000" />
-      <workItem from="1677673043028" duration="124272000" />
+      <workItem from="1677673043028" duration="134213000" />
     </task>
     <servers />
   </component>
