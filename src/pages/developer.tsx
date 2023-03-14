@@ -1,5 +1,6 @@
 import ElevatorButton from "../components/Elevator/ElevatorButton";
 import Elevator from "../components/Elevator/Elevator";
+import FlickrGallery from "../components/FlickrGallery/FlickrGallery";
 
 export default function Developer() {
   return (
@@ -8,6 +9,7 @@ export default function Developer() {
         Here are some coding challenges that I've developed
       </h1>
       <Elevator />
+      <FlickrGallery />
     </div>
   );
 }

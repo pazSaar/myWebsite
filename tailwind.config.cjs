@@ -11,6 +11,9 @@ module.exports = {
         primary: "var(--primary)",
         h1TXT: "var(--h1Text)",
       },
+      gridTemplateColumns: {
+        auto: "repeat(auto-fit, minmax(200px, auto))",
+      },
     },
   },
   plugins: [],
