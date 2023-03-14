@@ -68,7 +68,7 @@ const Building: FC<BuildingProps> = observer(() => {
   };
 
   return (
-    <div className="flex flex-col bg-neutralBg p-3">
+    <div className="flex flex-col  bg-neutralBg p-3">
       {drawRoof()}
       <div className="grid grid-cols-2 transition duration-150 ease-out">
         {drawFloors()}

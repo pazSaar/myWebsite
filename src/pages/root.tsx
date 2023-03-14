@@ -1,6 +1,5 @@
 import Nav from "../components/Nav.js";
 import { Outlet } from "react-router-dom";
-import Home from "./home";
 import { useState } from "react";
 import ThemeSelector from "../components/ThemeSelector";
 import {
@@ -16,9 +15,39 @@ const modeClassName = {
 };
 
 export default function Root() {
+  document.body.classList.add(`theme-${themeColors[0]}`);
+  document.body.classList.add(`theme-${themeModes[0]}`);
+
   const [color, setColor] = useState<ThemeColors>(themeColors[0]);
   const [mode, setMode] = useState<ThemeModes>(themeModes[0]);
 
+  const handleChangeColor = (color: ThemeColors) => {
+    switch (color) {
+      case "red":
+        document.body.classList.replace("theme-blue", "theme-red");
+        document.body.classList.replace("theme-green", "theme-red");
+        break;
+      case "blue":
+        document.body.classList.replace("theme-red", "theme-blue");
+        document.body.classList.replace("theme-green", "theme-blue");
+        break;
+      case "green":
+        document.body.classList.replace("theme-red", "theme-green");
+        document.body.classList.replace("theme-blue", "theme-green");
+        break;
+    }
+
+    setColor(color);
+  };
+
+  const handleChangeMode = (mode: ThemeModes) => {
+    console.log("mode", mode);
+    document.body.classList.replace(
+      mode === "light" ? `theme-dark` : `theme-light`,
+      mode === "light" ? `theme-light` : `theme-dark`
+    );
+    setMode(mode);
+  };
   return (
     <div
       className={[
@@ -30,9 +59,9 @@ export default function Root() {
         .join(" ")}
     >
       <ThemeSelector
-        changeColor={setColor}
+        changeColor={handleChangeColor}
         selectedColor={color}
-        changeMode={setMode}
+        changeMode={handleChangeMode}
         selectedMode={mode}
       />
       <Nav />

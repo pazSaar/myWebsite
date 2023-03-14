@@ -87,7 +87,7 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
 
   const drawPanel = () => {
     return (
-      <div className=" self-center bg-gray-500 w-20 h-11 border border-gray-600">
+      <div className="self-center bg-gray-500 w-20 h-11 border border-gray-600">
         <div className="relative bg-black/60 w-15 h-10 border border-gray-600 text-center">
           <span className="absolute top-0 left-0 right-0 text-green-500 ">
             {currentFloor}
@@ -103,9 +103,11 @@ const ElevatorPanel: FC<ElevatorPanelProps> = observer(() => {
   };
 
   return (
-    <div className="flex flex-col bg-neutralBg">
+    <div className="flex flex-col  bg-neutralBg">
       {drawPanel()}
-      <div className="grid rev grid-cols-2 ">{createPanelButtons()}</div>
+      <div className="grid rev grid-cols-1 md:grid-cols-2">
+        {createPanelButtons()}
+      </div>
     </div>
   );
 });
