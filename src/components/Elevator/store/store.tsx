@@ -23,6 +23,7 @@ class ElevatorStore {
   }
 
   shiftFloor() {
+    console.log("this.floorsStack", this.floorsStack);
     this.floorsStack.shift();
   }
 
