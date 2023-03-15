@@ -24,7 +24,7 @@ export default function ThemeSelector({
   };
 
   return (
-    <div className="absolute ml-0 mt-40">
+    <div className="fixed ml-0 mt-40">
       {color.map((currentColor) => {
         const borderStyle =
           selectedColor === currentColor

@@ -41,7 +41,6 @@ export default function Root() {
   };
 
   const handleChangeMode = (mode: ThemeModes) => {
-    console.log("mode", mode);
     document.body.classList.replace(
       mode === "light" ? `theme-dark` : `theme-light`,
       mode === "light" ? `theme-light` : `theme-dark`

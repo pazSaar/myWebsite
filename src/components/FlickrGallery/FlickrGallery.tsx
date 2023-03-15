@@ -21,7 +21,10 @@ const FlickrGallery: FC<FlickrGalleryProps> = ({}) => {
     <div className="my-10">
       <h1 className="mb-2">
         The Flickr Gallery{" "}
-        <a>
+        <a
+          href="https://github.com/pazSaar/myWebsite/tree/main/src/components/FlickrGallery"
+          target="_blank"
+        >
           {" "}
           <BsGithub className="inline-block text-xl" />{" "}
         </a>
