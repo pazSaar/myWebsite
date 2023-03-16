@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Creator from "../pages/creator";
 import Philosopher from "../pages/philosopher";
 import Home from "../pages/home";

@@ -78,3 +78,21 @@ body {
 @tailwind components;
 @tailwind utilities;
 
+@media (max-width: 640px) {
+  /*.lg\:flex-grow {*/
+  /*  flex-grow: 1;*/
+  /*}*/
+  /*.lg\:flex {*/
+  /*  display: flex;*/
+  /*  flex-wrap: wrap;*/
+  /*}*/
+  /*.lg\:justify-end {*/
+  /*  justify-content: flex-end;*/
+  /*}*/
+  /*.lg\:hidden {*/
+  /*  display: none;*/
+  /*}*/
+  /*.lg\:block {*/
+  /*  display: block;*/
+  /*}*/
+}

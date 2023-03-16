@@ -55,28 +55,13 @@ const Lift: FC<LiftProps> = ({ liftNextFloor = 0 }) => {
   };
 
   const bottomPXvalue = liftNextFloor * 40;
-  const bottomPXvalueTailwindSyntax =
-    bottomPXvalue === 0 ? "bottom-0" : `bottom-[${bottomPXvalue}px]`;
+  const inlineCSSStyle = bottomPXvalue === 0 ? "0" : `${bottomPXvalue}px`;
 
-  const liftStyle = `relative flex w-8 h-8 bg-gray-300 place-self-center rounded-md shadow-md row-start-[6] transition-all duration-1000 ease-in-out 
-  ${
-    liftNextFloor === 0
-      ? "bottom-0"
-      : liftNextFloor === 1
-      ? "bottom-[40px]"
-      : liftNextFloor === 2
-      ? "bottom-[80px]"
-      : liftNextFloor === 3
-      ? "bottom-[120px]"
-      : liftNextFloor === 4
-      ? "bottom-[160px]"
-      : liftNextFloor === 5
-      ? "bottom-[200px]"
-      : "bottom-0"
-  }`;
+  const liftStyle = `relative flex w-8 h-8 bg-gray-300 place-self-center rounded-md shadow-md row-start-[6] transition-all duration-1000 ease-in-out`;
   return (
     <div
       className={liftStyle}
+      style={{ bottom: inlineCSSStyle }}
       onTransitionEnd={handleLiftMovementTransitionEnd}
     >
       {drewLiftDoors()}

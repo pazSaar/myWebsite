@@ -1,27 +1,30 @@
-import profile from "../assets/me.png";
+import profile from "../assets/merounded.png";
 
 export default function Home() {
   return (
     <>
       <header>
-        <p className="text-center font-bold text-3xl">
-          Hi, my name is <span className="text-5xl text-h1TXT">Saar Paz.</span>
+        <p className="text-center text-sm font-bold sm:text-3xl">
+          Hi, my name is{" "}
+          <span className="text-sm text-h1TXT underline sm:text-5xl">
+            Saar Paz.
+          </span>
         </p>
       </header>
-      <section className="flex justify-evenly text-justify align-middle max-h-min mx-20 mt-5 border-8 border-onPrimaryBg p-10 gap-10 max-xl:flex-col max-xl:items-center">
+      <section className="flex justify-evenly text-justify align-middle w-auto max-h-min mx-20 mt-5 border-8 border-onPrimaryBg p-10 gap-10 overflow-auto max-xl:flex-col max-xl:items-center sm:w-auto">
         <img
-          className="h-96 w-96 rounded-full object-contain"
+          className="h-auto w-96 rounded-full object-contain"
           src={profile}
           alt="profile picture"
         />
-        <p className="w-3/4 text-xl self-center	max-h-96 break-words">
-          Enthusiastic web developer and problem solver. Certified programmer
-          and PC technician. Skilled in Javascript, ECMAScript ,TypeScript,
-          React, Node.js, Redux, CSS, HTML, Python... Experience in functional,
-          OOP, State-oriented programming. Working today as a web developer on a
-          React-Node.js based online website editor. Fast learner, autodidact,
-          passionate for knowledge and analytical thinking. People’s person. Has
-          past in Solidity, Arduino and Python projects.
+        <p className="w-auto text-sm self-center	max-h-96 break-words whitespace-pre-wrap sm:text-xl">
+          Enthusiastic web developer and problem solver. Certified software
+          engineer from the IDF. Skilled in Javascript ,TypeScript, React,
+          Node.js, CSS, HTML, ECMAScript, Redux, mobx, Python and more.
+          Experience in functional, OOP, State-oriented programming. Working
+          today as a full stack software engineer on a React-Node.js based
+          online website editor. Fast learner, autodidact, passionate for
+          knowledge and analytical thinking. People’s person.
         </p>
       </section>
     </>
