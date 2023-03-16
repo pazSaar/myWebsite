@@ -1,8 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
-import { RiSave3Fill } from "react-icons/RI";
-import { GiOpenFolder } from "react-icons/GI";
 import Popup from "./Popup";
 import { TagMode } from "./common/types";
+import { CiFloppyDisk, GoFileDirectory } from "react-icons/all";
 
 type SearchBarProps = {
   onChange: (value: string) => void;
@@ -74,10 +73,10 @@ const SearchBar: FC<SearchBarProps> = ({ onChange, setTagMode }) => {
       />
       <div className="flex flex-col">
         <button title="save text" onClick={handleSaveFilter}>
-          <RiSave3Fill size="1.2em" />
+          <CiFloppyDisk className="text-xl" />
         </button>
         <button title="load text" onClick={handleOpenFilter}>
-          <GiOpenFolder size="1.2em" />
+          <GoFileDirectory className="text-xl" />
         </button>
       </div>
       {openPopup ? (
