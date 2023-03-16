@@ -50,7 +50,7 @@ export default function Root() {
   return (
     <div
       className={[
-        "font-mono bg-primaryBg h-screen min-h-screen",
+        "font-mono h-screen min-h-screen",
         color && `theme-${color}`,
         mode && modeClassName[mode],
       ]

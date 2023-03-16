@@ -25,6 +25,9 @@ export default function Home() {
           today as a full stack software engineer on a React-Node.js based
           online website editor. Fast learner, autodidact, passionate for
           knowledge and analytical thinking. People’s person.
+          <br />
+          <br />I also have an academic background, as I hold a Master's degree
+          in Philosophy of Language from Tel Aviv University.
         </p>
       </section>
     </>

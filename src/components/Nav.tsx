@@ -17,7 +17,7 @@ export default function Nav() {
     <nav className="flex items-center justify-between flex-wrap p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <NavLink
-          className="mx-auto bg-neutralBg text-onNeutralBg border-onNeutralBg border-2  sm:border-8 p-2 max-w-sm    "
+          className="mx-auto bg-neutralBg text-onNeutralBg border-onNeutralBg border-2  sm:border-8 p-2 max-w-sm   "
           to="/"
         >
           <SiProbot className="inline-block" />{" "}
@@ -33,11 +33,11 @@ export default function Nav() {
         </button>
       </div>
       <div
-        className={`w-full flex-grow sm:flex sm:items-center sm:w-auto ${
+        className={`flex w-full justify-center flex-wrap flex-grow  sm:flex sm:items-center sm:w-auto ${
           showLinks ? "block" : "hidden"
         }`}
       >
-        <ul className="flex justify-end sm:flex-grow sm:justify-end">
+        <ul className="flex flex-wrap justify-between align-middle sm:flex-grow sm:justify-end">
           {[
             ["Home", "/"],
             ["Developer", "/developer"],
