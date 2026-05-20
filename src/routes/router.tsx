@@ -11,6 +11,7 @@ import Home from "../pages/home";
 import Developer from "../pages/developer";
 import Root from "../pages/root";
 import Writer from "../pages/writer";
+import ToMigrate from "../pages/subpages/toMigrate";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,12 +35,11 @@ const router = createBrowserRouter(
           // loader={contactLoader}
           // action={editAction}
         />
-        <Route
-          path="writer"
-          element={<Writer />}
-          // loader={contactLoader}
-          // action={editAction}
-        />
+        {/* Nesting the story route explicitly under writer */}
+        <Route path="writer">
+          <Route index element={<Writer />} />
+          <Route path="tomigrate" element={<ToMigrate />} />
+        </Route>
       </Route>
     </Route>
   )
