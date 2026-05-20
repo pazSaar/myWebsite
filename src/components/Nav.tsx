@@ -43,6 +43,7 @@ export default function Nav() {
             ["Developer", "/developer"],
             ["Philosopher", "/philosopher"],
             ["Creator", "/creator"],
+            ["Writer", "/writer"],
           ].map(([title, url]) => (
             <li key={title}>
               <NavLink

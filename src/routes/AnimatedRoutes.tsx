@@ -10,6 +10,7 @@ import Home from "../pages/home.js";
 import Developer from "../pages/developer.js";
 import Creator from "../pages/creator.js";
 import Philosopher from "../pages/philosopher.js";
+import Writer from "../pages/writer.js";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const AnimatedRoutes = () => {
         <Route path="/developer" Component={Developer} />
         <Route path="/philosopher" Component={Philosopher} />
         <Route path="/creator" Component={Creator} />
+        <Route path="/writer" Component={Writer} />
       </Routes>
     )
   );

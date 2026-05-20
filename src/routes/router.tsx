@@ -10,6 +10,7 @@ import Philosopher from "../pages/philosopher";
 import Home from "../pages/home";
 import Developer from "../pages/developer";
 import Root from "../pages/root";
+import Writer from "../pages/writer";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,12 @@ const router = createBrowserRouter(
         <Route
           path="creator"
           element={<Creator />}
+          // loader={contactLoader}
+          // action={editAction}
+        />
+        <Route
+          path="writer"
+          element={<Writer />}
           // loader={contactLoader}
           // action={editAction}
         />
